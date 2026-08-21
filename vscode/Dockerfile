@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-FROM nvcr.io/nvidia/omniverse/ov-base-ubuntu-22:2025.2.0
+FROM nvcr.io/nvidia/omniverse/ov-base-ubuntu-22:2026.2.3
 
 USER root
 
@@ -45,8 +45,8 @@ ENV WORKSPACE_DIR=/home/ubuntu/workspace
 
 WORKDIR /home/ubuntu/workspace
 
-ARG KIT_APP_TEMPLATE_BRANCH=108.0
-RUN git clone -b ${KIT_APP_TEMPLATE_BRANCH} https://github.com/NVIDIA-Omniverse/kit-app-template.git
+ARG KIT_APP_TEMPLATE_BRANCH=110.2
+RUN git clone -b ${KIT_APP_TEMPLATE_BRANCH} https://github.com/cavedutzushian/kit-app-template.git
 
 COPY --chown=ubuntu:ubuntu ./README.md ${WORKSPACE_DIR}/README.md
 COPY --chown=ubuntu:ubuntu ./settings.json ${WORKSPACE_DIR}/.vscode/settings.json
