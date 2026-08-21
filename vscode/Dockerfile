@@ -64,6 +64,10 @@ RUN mkdir -p /home/ubuntu/.local/share/ov
 RUN chown ubuntu:ubuntu /home/ubuntu/.cache/ov
 RUN chown ubuntu:ubuntu /home/ubuntu/.local/share/ov
 
+RUN curl -fsSL https://developer.nvidia.com/downloads/Omniverse/learning/Courses/PhysicalAI_SceneAssembly.zip -o PhysicalAI_SceneAssembly.zip && \
+    unzip PhysicalAI_SceneAssembly.zip -d /home/ubuntu/workspace && \
+		rm PhysicalAI_SceneAssembly.zip
+RUN chown -R ubuntu:ubuntu /home/ubuntu/workspace/PhysicalAI_SceneAssembly_Start
 
 ENTRYPOINT ["/bin/bash"]
 
