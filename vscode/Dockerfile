@@ -69,6 +69,11 @@ RUN curl -fsSL https://developer.nvidia.com/downloads/Omniverse/learning/Courses
 		rm PhysicalAI_SceneAssembly.zip
 RUN chown -R ubuntu:ubuntu /home/ubuntu/workspace/PhysicalAI_SceneAssembly_Start
 
+RUN curl -fsSL https://developer.nvidia.com/downloads/USD/dataset/Factory/Factory_Lite.zip -o Factory_Lite.zip && \
+    unzip Factory_Lite.zip -d /home/ubuntu/workspace/Supplyment_Factory_Lite && \
+		rm Factory_Lite.zip
+RUN chown -R ubuntu:ubuntu /home/ubuntu/workspace/Supplyment_Factory_Lite
+
 ENTRYPOINT ["/bin/bash"]
 
 CMD ["/entrypoint.sh"]
